@@ -3,12 +3,11 @@
 namespace Database\Factories;
 
 use Illuminate\Database\Eloquent\Factories\Factory;
-use Illuminate\Support\Facades\Hash;
 
 /**
- * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Secretary>
+ * @extends \Illuminate\Database\Eloquent\Factories\Factory<\App\Models\Category>
  */
-class SecretaryFactory extends Factory
+class CategoryFactory extends Factory
 {
     /**
      * Define the model's default state.
@@ -19,8 +18,7 @@ class SecretaryFactory extends Factory
     {
         return [
             'name' => fake()->name(),
-            'email' => fake()->unique()->email(),
-            'password' => $password ??=Hash::make('password')
+            'description' => fake()->text(),
         ];
     }
 }
