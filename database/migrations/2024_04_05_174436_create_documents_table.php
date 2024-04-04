@@ -13,11 +13,16 @@ return new class extends Migration
     {
         Schema::create('documents', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('category_id')->constrained();
-            $table->string('name');
+            $table->foreignId('category_id')->constrained()->onDelete('cascade');
+            $table->string('title');
+            $table->text('description');
+            $table->string('file_path');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->unsignedInteger('size');
             $table->string('type');
-            $table->foreignId('department_id')->constrained();
+            $table->boolean('is_public');
+            $table->boolean('is_archived');
+            $table->foreignId('department_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
