@@ -2,19 +2,19 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\Models\User;
 use Illuminate\Http\Request;
 
-class CategoryController extends Controller
+class UserController extends Controller
 {
     /**
      * Display a listing of the resource.
      */
     public function index()
     {
-        $categories = Category::all();
+        $departmentusers = User::all();
 
-        return view('admin.layouts.pages.category', compact('categories'));
+        return view('admin.layouts.pages.department-users', compact('departmentusers'));
     }
 
     /**
@@ -22,7 +22,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        
+        return view('admin.layouts.pages.department-user');
     }
 
     /**
@@ -30,13 +30,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        $request->validate([
-            'name' => 'required|string',
-            'description' => 'required|string'
-        ]);
-
-        Category::created($request);
-        return back();
+        //
     }
 
     /**
