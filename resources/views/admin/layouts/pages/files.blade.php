@@ -97,16 +97,17 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach ($documents as $document)
                                                 <tr>
                                                     <td></td>
-                                                    <td>Category 1</td>
-                                                    <td>CTRL-101-21</td>
-                                                    <td>Sample.docx</td>
-                                                    <td>2.3mb</td>
+                                                    <td>{{ $document->category->name }}</td>
+                                                    <td></td>
+                                                    <td>{{ $document->title }}</td>
+                                                    <td>2{{ $document->size }}kb</td>
                                                     <td><img src="../img/docx.png" alt="" width="30"/></td>
-                                                    <td>Nov 3, 2021</td>
+                                                    <td>{{ $document->created_at->format('Y-m-d')  }}</td>
                                                     <td><i class="fa big-icon fa-download"></i></td>
-                                                    <td>Department1</td>
+                                                    <td>{{ $document->department->name }}</td>
                                                     <td>
                                                         <div class="btn-group project-list-ad-rd">
                                                             <button class="btn btn-white btn-xs">pending</button>
@@ -114,74 +115,8 @@
                                                     </td>
                                                     <td>Remarks</td>
                                                 </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>Category 5</td>
-                                                    <td>CTRL-456-21</td>
-                                                    <td>Myfiles.pptx</td>
-                                                    <td>2.6mb</td>
-                                                    <td><img src="../img/pptx.png" alt="" width="30"/></td>
-                                                    <td>Nov 4, 2021</td>
-                                                    <td><i class="fa big-icon fa-download"></i></td>
-                                                    <td>Department7</td>
-                                                    <td>
-                                                        <div class="btn-group project-list-ad">
-                                                            <button class="btn btn-white btn-xs">approved</button>
-                                                        </div>
-                                                    </td>
-                                                    <td>Remarks</td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>Category 2</td>
-                                                    <td>CTRL-456-21</td>
-                                                    <td>Documentaion.docx</td>
-                                                    <td>1.8mb</td>
-                                                    <td><img src="../img/docx.png" alt="" width="30"/></td>
-                                                    <td>Nov 7, 2021</td>
-                                                    <td><i class="fa big-icon fa-download"></i></td>
-                                                    <td>Department4</td>
-                                                    <td>
-                                                        <div class="btn-group project-list-ad-bl">
-                                                            <button class="btn btn-white btn-xs">for review</button>
-                                                        </div>
-                                                    </td>
-                                                    <td>Remarks</td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>Category 3</td>
-                                                    <td>CTRL-343-21</td>
-                                                    <td>Myfiles.xlx</td>
-                                                    <td>128kb</td>
-                                                    <td><img src="../img/xls.png" alt="" width="30"/></td>
-                                                    <td>Nov 7, 2021</td>
-                                                    <td><i class="fa big-icon fa-download"></i></td>
-                                                    <td>Department2</td>
-                                                    <td>
-                                                        <div class="btn-group project-list-ad">
-                                                            <button class="btn btn-white btn-xs">approved</button>
-                                                        </div>
-                                                    </td>
-                                                    <td>Remarks</td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>Category 3</td>
-                                                    <td>CTRL-112-21</td>
-                                                    <td>Mypicture.jpg</td>
-                                                    <td>1mb</td>
-                                                    <td><img src="../img/jpg.png" alt="" width="30"/></td>
-                                                    <td>Nov 6, 2021</td>
-                                                    <td><i class="fa big-icon fa-download"></i></td>
-                                                    <td>Department2</td>
-                                                    <td>
-                                                        <div class="btn-group project-list-ad">
-                                                            <button class="btn btn-white btn-xs">approved</button>
-                                                        </div>
-                                                    </td>
-                                                    <td>Remarks</td>
-                                                </tr>
+                                                @endforeach
+                                                
                                             </tbody>
                                         </table>
                                     </div>

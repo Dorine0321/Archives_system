@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
+use App\Http\Controllers\DocumentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,9 +28,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
     Route::get('/department-users', function () {
         return view('admin.layouts.pages.department-users');
     })->name('department-users');
-    Route::get('/files', function () {
-        return view('admin.layouts.pages.files');
-    })->name('files');
+    Route::get('/files', [DocumentController::class, 'index'])->name('files');
     Route::get('/settings', function () {
         return view('admin.layouts.pages.settings');
     })->name('settings');
