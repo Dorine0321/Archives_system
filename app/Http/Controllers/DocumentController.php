@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Category;
+use App\Models\Department;
 use App\Models\Document;
 use Illuminate\Http\Request;
 
@@ -23,7 +25,10 @@ class DocumentController extends Controller
      */
     public function create()
     {
-        //
+        $categories = Category::all();
+        $departments = Department::all();
+
+        return view('admin.layouts.pages.upload-file', compact('categories', 'departments'));
     }
 
     /**

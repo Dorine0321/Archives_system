@@ -85,22 +85,34 @@
                                                     <div class="col-lg-6">
                                                         <div class="touchspin-inner">
                                                             <label>File Category</label>
-                                                            <input type="text" class="form-control"
-                                                                placeholder=" ex. Category 1" />
+                                                            <select class="form-control" name="category">
+                                                                @foreach ($categories as $category)
+                                                                    <option value="{{ $category->id }}">
+                                                                        {{ $category->name }}
+                                                                    </option>
+                                                                @endforeach
+                                                                
+                                                            </select>
                                                         </div>
                                                     </div>
                                                     <div class="col-lg-6">
                                                         <div class="touchspin-inner">
-                                                            <label>Control Number</label>
-                                                            <input type="text" class="form-control" value="CTRL-120-21"
-                                                                readonly />
+                                                            <label>Department</label>
+                                                            <select class="form-control" name="department">
+                                                                @foreach ($departments as $department)
+                                                                    <option value="{{ $department->id }}">
+                                                                        {{ $department->name }}
+                                                                    </option>
+                                                                @endforeach
+                                                                
+                                                            </select>
                                                         </div>
                                                     </div>
                                                     <br><br><br><br>
                                                     <div class="col-lg-12">
                                                         <div class="touchspin-inner">
-                                                            <label>File Name</label>
-                                                            <input type="text" class="form-control"
+                                                            <label>Title</label>
+                                                            <input type="text" name="title" class="form-control"
                                                                 placeholder=" ex. Myfiles" />
                                                         </div>
                                                     </div>
@@ -108,30 +120,14 @@
                                                     <div class="col-lg-12">
                                                         <div class="touchspin-inner">
                                                             <label>Description</label>
-                                                            <textarea class="form-control" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit."></textarea>
+                                                            <textarea class="form-control" name="description"></textarea>
                                                         </div>
                                                     </div>
                                                     <br><br><br><br><br>
                                                     <div class="col-lg-6">
                                                         <div class="touchspin-inner">
-                                                            <label>File Size</label>
-                                                            <input type="text" class="form-control"
-                                                                placeholder=" ex. 2mb" />
-                                                        </div>
-                                                    </div>
-                                                    <div class="col-lg-6">
-                                                        <div class="touchspin-inner">
-                                                            <label>File Type</label>
-                                                            <input type="text" class="form-control"
-                                                                placeholder=" ex. docx" />
-                                                        </div>
-                                                    </div>
-                                                    <br><br><br><br>
-                                                    <div class="col-lg-12">
-                                                        <div class="touchspin-inner">
-                                                            <label>Remarks</label>
-                                                            <input type="text" class="form-control"
-                                                                placeholder="Remarks" />
+                                                            <label>File</label>
+                                                            <input type="file" class="form-control" name='file'/>
                                                         </div>
                                                     </div>
                                                     <br><br><br><br>

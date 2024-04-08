@@ -20,9 +20,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('admin')->name('admin.')->group(function(){
     Route::get('/', [DashboardController::class, 'index'])->name('home');
-    Route::get('/upload-file', function () {
-        return view('admin.layouts.pages.upload-file');
-    })->name('upload-file');
+    Route::get('/upload-file', [DocumentController::class, 'create'])->name('upload-file');
     Route::get('/department', [DepartmentController::class, 'index'])->name('departments');
     Route::get('/category', [CategoryController::class, 'index'])->name('category');
     Route::get('/department-users', function () {
@@ -37,6 +35,6 @@ Route::prefix('admin')->name('admin.')->group(function(){
         return view('admin.layouts.pages.status-report');
     })->name('status-report');
 });
-Route::get('/auth', function () {
+Route::get('/', function () {
     return view('auth.login');
 })->name('auth.login');

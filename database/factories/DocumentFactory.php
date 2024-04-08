@@ -28,8 +28,7 @@ class DocumentFactory extends Factory
             'type' => fake()->name(),
             'size' => fake()->numberBetween(1, 1000),
             'department_id' => fake()->numberBetween(1, Department::count()),
-            'is_public' => fake()->boolean(),
-            'is_archived' => fake()->boolean()
+            'status' => fake()->sentence(),
         ];
     }
 }

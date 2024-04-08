@@ -20,8 +20,7 @@ return new class extends Migration
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->unsignedInteger('size');
             $table->string('type');
-            $table->boolean('is_public');
-            $table->boolean('is_archived');
+            $table->string('status');
             $table->foreignId('department_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
