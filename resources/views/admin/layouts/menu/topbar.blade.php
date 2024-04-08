@@ -25,7 +25,7 @@
                                         <li class="nav-item">
                                             <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
                                                 <span class="fa fa-user"></span>
-                                                <span class="admin-name">John Doe</span>
+                                                <span class="admin-name">Dorine Lore</span>
                                                 <span class="fa fa-caret-down"></span>
                                             </a>
                                             <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated flipInX">

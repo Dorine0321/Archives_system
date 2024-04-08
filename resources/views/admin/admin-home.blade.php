@@ -78,7 +78,7 @@
                         <div class="income-dashone-pro">
                             <div class="income-rate-total">
                                 <div class="price-adminpro-rate">
-                                    <h3><span class="counter">120</span></h3>
+                                    <h3><span class="counter">{{ $files }}</span></h3>
                                 </div>
                                 <div class="price-graph">
                                     <span id="sparkline1"></span>
@@ -105,7 +105,7 @@
                         <div class="income-dashone-pro">
                             <div class="income-rate-total">
                                 <div class="price-adminpro-rate">
-                                    <h3><span class="counter">50</span></h3>
+                                    <h3><span class="counter">{{ $users }}</span></h3>
                                 </div>
                                 <div class="price-graph">
                                     <span id="sparkline6"></span>
@@ -132,7 +132,7 @@
                         <div class="income-dashone-pro">
                             <div class="income-rate-total">
                                 <div class="price-adminpro-rate">
-                                    <h3><span class="counter">25</span></h3>
+                                    <h3><span class="counter">{{ $categories }}</span></h3>
                                 </div>
                                 <div class="price-graph">
                                     <span id="sparkline2"></span>
@@ -159,7 +159,7 @@
                         <div class="income-dashone-pro">
                             <div class="income-rate-total">
                                 <div class="price-adminpro-rate">
-                                    <h3><span class="counter">10</span></h3>
+                                    <h3><span class="counter">{{ $departments }}</span></h3>
                                 </div>
                                 <div class="price-graph">
                                     <span id="sparkline5"></span>

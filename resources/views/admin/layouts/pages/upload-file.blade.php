@@ -1,8 +1,8 @@
 @extends('admin.layouts.layout')
 
 @section('body')
-     <!-- Breadcome start-->
-     <div class="breadcome-area mg-b-30 small-dn">
+    <!-- Breadcome start-->
+    <div class="breadcome-area mg-b-30 small-dn">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-12">
@@ -20,7 +20,7 @@
                                 <ul class="breadcome-menu">
                                     <li><a href="#">Home</a> <span class="bread-slash">/</span>
                                     </li>
-                                    <li><span class="bread-blod">Category</span>
+                                    <li><span class="bread-blod">Upload File</span>
                                     </li>
                                 </ul>
                             </div>
@@ -51,7 +51,7 @@
                                 <ul class="breadcome-menu">
                                     <li><a href="#">Home</a> <span class="bread-slash">/</span>
                                     </li>
-                                    <li><span class="bread-blod">Category</span>
+                                    <li><span class="bread-blod">Upload File</span>
                                     </li>
                                 </ul>
                             </div>
@@ -71,38 +71,72 @@
                     <div class="sparkline13-list shadow-reset">
                         <div class="sparkline13-hd">
                             <div class="main-sparkline13-hd">
-                                <h1><i class="fa big-icon fa-windows"></i> Category</h1>
+                                <h1><i class="fa big-icon fa-upload"></i> Upload File</h1>
                             </div>
                         </div>
                         <div class="sparkline13-graph">
                             <div class="datatable-dashv1-list custom-datatable-overright">
 
                                 <div class="row">
-                                    <div class="col-lg-4">
+                                    <div class="col-lg-8 col-lg-offset-2">
                                         <div class="basic-login-inner"><br><br>
-                                            <h3>Create New Category</h3><br>
                                             <form action="#">
-                                                <div class="form-group-inner">
-                                                    <div class="row">
-                                                        <label style="float:left;padding-left:15px">Category
-                                                            Name</label>
-                                                        <div class="col-lg-12">
+                                                <div class="row">
+                                                    <div class="col-lg-6">
+                                                        <div class="touchspin-inner">
+                                                            <label>File Category</label>
                                                             <input type="text" class="form-control"
-                                                                placeholder="Category name" />
+                                                                placeholder=" ex. Category 1" />
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="form-group-inner">
-                                                    <div class="row">
-                                                        <label style="float:left;padding-left:15px">Description</label>
-                                                        <div class="col-lg-12">
-                                                            <textarea class="form-control" placeholder="ex. Fusce gravida scelerisque maximus."></textarea>
+                                                    <div class="col-lg-6">
+                                                        <div class="touchspin-inner">
+                                                            <label>Control Number</label>
+                                                            <input type="text" class="form-control" value="CTRL-120-21"
+                                                                readonly />
                                                         </div>
                                                     </div>
-                                                </div>
-                                                <div class="form-group-inner">
-                                                    <div class="row">
-                                                        <div class="col-lg-12">
+                                                    <br><br><br><br>
+                                                    <div class="col-lg-12">
+                                                        <div class="touchspin-inner">
+                                                            <label>File Name</label>
+                                                            <input type="text" class="form-control"
+                                                                placeholder=" ex. Myfiles" />
+                                                        </div>
+                                                    </div>
+                                                    <br><br><br><br>
+                                                    <div class="col-lg-12">
+                                                        <div class="touchspin-inner">
+                                                            <label>Description</label>
+                                                            <textarea class="form-control" placeholder="Lorem ipsum dolor sit amet, consectetur adipiscing elit."></textarea>
+                                                        </div>
+                                                    </div>
+                                                    <br><br><br><br><br>
+                                                    <div class="col-lg-6">
+                                                        <div class="touchspin-inner">
+                                                            <label>File Size</label>
+                                                            <input type="text" class="form-control"
+                                                                placeholder=" ex. 2mb" />
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-lg-6">
+                                                        <div class="touchspin-inner">
+                                                            <label>File Type</label>
+                                                            <input type="text" class="form-control"
+                                                                placeholder=" ex. docx" />
+                                                        </div>
+                                                    </div>
+                                                    <br><br><br><br>
+                                                    <div class="col-lg-12">
+                                                        <div class="touchspin-inner">
+                                                            <label>Remarks</label>
+                                                            <input type="text" class="form-control"
+                                                                placeholder="Remarks" />
+                                                        </div>
+                                                    </div>
+                                                    <br><br><br><br>
+                                                    <div class="col-lg-12">
+                                                        <div class="touchspin-inner">
                                                             <div class="btn-group project-list-ad">
                                                                 <a href="#" class="btn btn-md btn-block"><i
                                                                         class="fa fa-paper-plane"></i> Submit</a>
@@ -112,40 +146,6 @@
                                                 </div>
                                             </form>
                                         </div>
-                                    </div>
-                                    <div class="col-lg-8">
-                                        <table id="table" data-toggle="table" data-pagination="true"
-                                            data-search="true" data-show-export="true" data-toolbar="#toolbar">
-                                            <thead>
-                                                <tr>
-                                                    <th data-field="state" data-checkbox="true"></th>
-                                                    <th>ID</th>
-                                                    <th>Category Name</th>
-                                                    <th>Description</th>
-                                                    <th>Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                @foreach ($categories as $category)
-                                                     <tr>
-                                                    <td></td>
-                                                    <td>{{ $category->id }}</td>
-                                                    <td>{{ $category->name }}</td>
-                                                    <td>{{ $category->description }}</td>
-                                                    <td>
-                                                        <div class="btn-group project-list-ad">
-                                                            <a href="#" class="btn btn-white btn-xs"><i
-                                                                    class="fa fa-pencil"></i> Edit</a>
-                                                        </div>
-                                                        <div class="btn-group project-list-ad-rd">
-                                                            <a href="#" class="btn btn-white btn-xs"><i
-                                                                    class="fa fa-trash"></i> Delete</a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                @endforeach
-                                            </tbody>
-                                        </table>
                                     </div>
                                 </div>
                             </div>

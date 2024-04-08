@@ -14,6 +14,9 @@
                         <a href="{{ route('admin.home') }}" ><i class="fa big-icon fa-tachometer"></i> <span class="mini-dn">Dashboard</span> </span></a>
                     </li>
                     <li class="nav-item">
+                        <a href="{{ route('admin.upload-file') }}" ><i class="fa big-icon fa-building"></i> <span class="mini-dn">Upload file</span> </span></a>
+                    </li>
+                    <li class="nav-item">
                         <a href="{{ route('admin.departments') }}" ><i class="fa big-icon fa-building"></i> <span class="mini-dn">Department</span> </span></a>
                     </li>
                     <li class="nav-item">

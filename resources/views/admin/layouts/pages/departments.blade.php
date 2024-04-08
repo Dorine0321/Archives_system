@@ -20,7 +20,7 @@
                                 <ul class="breadcome-menu">
                                     <li><a href="#">Home</a> <span class="bread-slash">/</span>
                                     </li>
-                                    <li><span class="bread-blod">Department User</span>
+                                    <li><span class="bread-blod">Departments</span>
                                     </li>
                                 </ul>
                             </div>
@@ -50,7 +50,7 @@
                                 <ul class="breadcome-menu">
                                     <li><a href="#">Home</a> <span class="bread-slash">/</span>
                                     </li>
-                                    <li><span class="bread-blod">Department User</span>
+                                    <li><span class="bread-blod">Department </span>
                                     </li>
                                 </ul>
                             </div>
@@ -70,7 +70,7 @@
                     <div class="sparkline13-list shadow-reset">
                         <div class="sparkline13-hd">
                             <div class="main-sparkline13-hd">
-                                <h1><i class="fa big-icon fa-users"></i> Department Users</h1>
+                                <h1><i class="fa big-icon fa- s"></i> Department s</h1>
                             </div>
                         </div>
                         <div class="sparkline13-graph">
@@ -79,11 +79,12 @@
                                 <div class="row">
                                     <div class="col-lg-4">
                                         <div class="basic-login-inner"><br><br>
-                                            <h3>Create New Department User</h3><br>
+                                            <h3>Create New Department </h3><br>
                                             <form action="#">
                                                 <div class="form-group-inner">
                                                     <div class="row">
-                                                        <label style="float:left;padding-left:15px"><i class="fa big-icon fa-user"></i> User Information</label>
+                                                        <label style="float:left;padding-left:15px"><i
+                                                                class="fa big-icon fa- "></i> Information</label>
                                                     </div>
                                                 </div>
                                                 <div class="form-group-inner">
@@ -119,20 +120,21 @@
                                                     <div class="row">
                                                         <label style="float:left;padding-left:15px">Profile</label>
                                                         <div class="col-lg-12">
-                                                            <input type="file" class="form-control"/>
+                                                            <input type="file" class="form-control" />
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <div class="form-group-inner">
                                                     <div class="row">
-                                                        <label style="float:left;padding-left:15px"><i class="fa big-icon fa-lock"></i> Account Information</label>
+                                                        <label style="float:left;padding-left:15px"><i
+                                                                class="fa big-icon fa-lock"></i> Account Information</label>
                                                     </div>
                                                 </div>
                                                 <div class="form-group-inner">
                                                     <div class="row">
-                                                        <label style="float:left;padding-left:15px">Username</label>
+                                                        <label style="float:left;padding-left:15px"> name</label>
                                                         <div class="col-lg-12">
-                                                            <input type="tet" class="form-control" placeholder="John"/>
+                                                            <input type="tet" class="form-control" placeholder="John" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -140,7 +142,8 @@
                                                     <div class="row">
                                                         <label style="float:left;padding-left:15px">Password</label>
                                                         <div class="col-lg-12">
-                                                            <input type="password" class="form-control" placeholder="**********"/>
+                                                            <input type="password" class="form-control"
+                                                                placeholder="**********" />
                                                         </div>
                                                     </div>
                                                 </div>
@@ -158,120 +161,35 @@
                                         </div>
                                     </div>
                                     <div class="col-lg-8">
-                                        <table id="table" data-toggle="table" data-pagination="true" data-search="true"
-                                            data-show-export="true" data-toolbar="#toolbar">
+                                        <table id="table" data-toggle="table" data-pagination="true"
+                                            data-search="true" data-show-export="true" data-toolbar="#toolbar">
                                             <thead>
                                                 <tr>
-                                                    <th data-field="state" data-checkbox="true"></th>
-                                                    <th>Department Code</th>
-                                                    <th>Profile</th>
-                                                    <th>Full Name</th>
-                                                    <th>Designation</th>
-                                                    <th>Account Status</th>
+                                                    <th>ID</th>
+                                                    <th>Name</th>
+                                                    <th>Description</th>
                                                     <th data-field="action">Action</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>DPMT-101-21</td>
-                                                    <td><img src="img/5.jpg" alt="" width="30"/></td>
-                                                    <td>Cedric Lee</td>
-                                                    <td>Designation 5</td>
-                                                    <td><div class="btn-group project-list-ad-rd">
-                                                            <button class="btn btn-white btn-xs">Inactive</button>
-                                                        </div></td>
+                                                @foreach ($departments as $department)
+                                                    <tr>
+                                                        <td>{{ $department->id }}</td>
+                                                        <td>{{ $department->name }}</td>
+                                                        <td>{{ $department->description }}/td>
                                                         <td>
-                                                        <div class="btn-group project-list-ad">
-                                                            <a href="#" class="btn btn-white btn-xs"><i
-                                                                    class="fa fa-pencil"></i> Edit</a>
-                                                        </div>
-                                                        <div class="btn-group project-list-ad-rd">
-                                                            <a href="#" class="btn btn-white btn-xs"><i
-                                                                    class="fa fa-trash"></i> Delete</a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>DPMT-345-21</td>
-                                                    <td><img src="img/1.jpg" alt="" width="30"/></td>
-                                                    <td>John Kelly</td>
-                                                    <td>Designation 4</td>
-                                                    <td><div class="btn-group project-list-ad">
-                                                            <button class="btn btn-white btn-xs">Active</button>
-                                                        </div></td>
-                                                        <td>
-                                                        <div class="btn-group project-list-ad">
-                                                            <a href="#" class="btn btn-white btn-xs"><i
-                                                                    class="fa fa-pencil"></i> Edit</a>
-                                                        </div>
-                                                        <div class="btn-group project-list-ad-rd">
-                                                            <a href="#" class="btn btn-white btn-xs"><i
-                                                                    class="fa fa-trash"></i> Delete</a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>DPMT-789-21</td>
-                                                    <td><img src="img/2.jpg" alt="" width="30"/></td>
-                                                    <td>Ashton Cox</td>
-                                                    <td>Designation 2</td>
-                                                    <td><div class="btn-group project-list-ad">
-                                                            <button class="btn btn-white btn-xs">Active</button>
-                                                        </div></td>
-                                                        <td>
-                                                        <div class="btn-group project-list-ad">
-                                                            <a href="#" class="btn btn-white btn-xs"><i
-                                                                    class="fa fa-pencil"></i> Edit</a>
-                                                        </div>
-                                                        <div class="btn-group project-list-ad-rd">
-                                                            <a href="#" class="btn btn-white btn-xs"><i
-                                                                    class="fa fa-trash"></i> Delete</a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>DPMT-453-21</td>
-                                                    <td><img src="img/3.jpg" alt="" width="30"/></td>
-                                                    <td>William Smith</td>
-                                                    <td>Designation 6</td>
-                                                    <td><div class="btn-group project-list-ad-rd">
-                                                            <button class="btn btn-white btn-xs">Inactive</button>
-                                                        </div></td>
-                                                        <td>
-                                                        <div class="btn-group project-list-ad">
-                                                            <a href="#" class="btn btn-white btn-xs"><i
-                                                                    class="fa fa-pencil"></i> Edit</a>
-                                                        </div>
-                                                        <div class="btn-group project-list-ad-rd">
-                                                            <a href="#" class="btn btn-white btn-xs"><i
-                                                                    class="fa fa-trash"></i> Delete</a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                                <tr>
-                                                    <td></td>
-                                                    <td>DPMT-234-21</td>
-                                                    <td><img src="img/4.jpg" alt="" width="30"/></td>
-                                                    <td>Charde Marshall</td>
-                                                    <td>Designation 1</td>
-                                                    <td><div class="btn-group project-list-ad">
-                                                            <button class="btn btn-white btn-xs">Active</button>
-                                                        </div></td>
-                                                        <td>
-                                                        <div class="btn-group project-list-ad">
-                                                            <a href="#" class="btn btn-white btn-xs"><i
-                                                                    class="fa fa-pencil"></i> Edit</a>
-                                                        </div>
-                                                        <div class="btn-group project-list-ad-rd">
-                                                            <a href="#" class="btn btn-white btn-xs"><i
-                                                                    class="fa fa-trash"></i> Delete</a>
-                                                        </div>
-                                                    </td>
-                                                </tr>
+                                                            <div class="btn-group project-list-ad">
+                                                                <a href="#" class="btn btn-white btn-xs"><i
+                                                                        class="fa fa-pencil"></i> Edit</a>
+                                                            </div>
+                                                            <div class="btn-group project-list-ad-rd">
+                                                                <a href="#" class="btn btn-white btn-xs"><i
+                                                                        class="fa fa-trash"></i> Delete</a>
+                                                            </div>
+                                                        </td>
+                                                    </tr>
+                                                @endforeach
+
                                             </tbody>
                                         </table>
                                     </div>

@@ -1,5 +1,8 @@
 <?php
 
+use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\DepartmentController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,15 +18,12 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::prefix('admin')->name('admin.')->group(function(){
-    Route::get('/', function () {
-        return view('admin.admin-home');
-    })->name('home');
-    Route::get('/department', function () {
-        return view('admin.layouts.pages.departments');
-    })->name('departments');
-    Route::get('/category', function () {
-        return view('admin.layouts.pages.category');
-    })->name('category');
+    Route::get('/', [DashboardController::class, 'index'])->name('home');
+    Route::get('/upload-file', function () {
+        return view('admin.layouts.pages.upload-file');
+    })->name('upload-file');
+    Route::get('/department', [DepartmentController::class, 'index'])->name('departments');
+    Route::get('/category', [CategoryController::class, 'index'])->name('category');
     Route::get('/department-users', function () {
         return view('admin.layouts.pages.department-users');
     })->name('department-users');
@@ -40,3 +40,6 @@ Route::prefix('admin')->name('admin.')->group(function(){
         return view('admin.layouts.pages.status-report');
     })->name('status-report');
 });
+Route::get('/auth', function () {
+    return view('auth.login');
+})->name('auth.login');
