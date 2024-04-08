@@ -39,12 +39,11 @@ class DepartmentController extends Controller
         return back();
     }
 
-    /**
-     * Display the specified resource.
-     */
-    public function show(string $id)
+    public function get_department_files()
     {
-        //
+        $departments = Department::all();
+
+        return view('admin.layouts.pages.department-report', compact('departments'));
     }
 
     /**

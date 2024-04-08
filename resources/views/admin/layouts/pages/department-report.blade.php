@@ -87,46 +87,12 @@
                                                 </tr>
                                             </thead>
                                             <tbody>
+                                                @foreach ($departments as $department)
                                                 <tr>
-                                                    <td>Department 1</td>
-                                                    <td>25</td>
+                                                    <td>{{ $department->name }}</td>
+                                                    <td>{{ $department->documents->count() }}</td>
                                                 </tr>
-                                                <tr>
-                                                    <td>Department 2</td>
-                                                    <td>55</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Department 3</td>
-                                                    <td>15</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Department 4</td>
-                                                    <td>30</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Department 5</td>
-                                                    <td>20</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Department 6</td>
-                                                    <td>29</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Department 7</td>
-                                                    <td>54</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Department 8</td>
-                                                    <td>34</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Department 9</td>
-                                                    <td>45</td>
-                                                </tr>
-                                                <tr>
-                                                    <td>Department 10</td>
-                                                    <td>64</td>
-                                                </tr>
+                                                @endforeach
                                             </tbody>
                                         </table>
                                     </div>

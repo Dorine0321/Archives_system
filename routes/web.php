@@ -32,9 +32,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
     Route::get('/settings', function () {
         return view('admin.layouts.pages.settings');
     })->name('settings');
-    Route::get('/department-report', function () {
-        return view('admin.layouts.pages.department-report');
-    })->name('department-report');
+    Route::get('/department-report', [DepartmentController::class, 'get_department_files'])->name('department-report');
     Route::get('/status-report', function () {
         return view('admin.layouts.pages.status-report');
     })->name('status-report');

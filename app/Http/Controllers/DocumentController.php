@@ -17,6 +17,7 @@ class DocumentController extends Controller
         return view('admin.layouts.pages.files', compact('documents'));
     }
 
+
     /**
      * Show the form for creating a new resource.
      */
