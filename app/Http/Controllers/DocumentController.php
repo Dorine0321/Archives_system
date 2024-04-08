@@ -6,6 +6,7 @@ use App\Models\Category;
 use App\Models\Department;
 use App\Models\Document;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Storage;
 
 class DocumentController extends Controller
@@ -43,10 +44,9 @@ class DocumentController extends Controller
             'file' => 'required|file|mimes:pdf,docx,xls,ppt,txt|max:8192',
         ]);
         
-        //dd($request);
         $validatedData = $request->except('file', '_token');
-        $validatedData['user_id'] = 1;
-
+        $validatedData['user_id'] = Auth::user()->id;
+        
         $document = Document::create($validatedData);
         
         $file = $request->file('file');
@@ -62,7 +62,7 @@ class DocumentController extends Controller
         $document->type = $fileType;
         $document->size = $fileSize;
         $document->file_path = $savedFilePath;
-
+        
         if ($fileType == 'application/docx'){
             $document->image_path = asset('img/docx.png');
         }
@@ -77,7 +77,8 @@ class DocumentController extends Controller
         }
         
         $document->save();
-
+        
+        
         return redirect()->route('admin.files')->with('success', 'Data has been stored successfully.');
     }
 

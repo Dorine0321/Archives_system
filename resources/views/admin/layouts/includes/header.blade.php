@@ -13,9 +13,11 @@
     <!-- Bootstrap CSS
 		============================================ -->
     <link rel="stylesheet" href="{{asset('/css/bootstrap.min.css') }}">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/fontawesome.min.css" />  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />  
     <!-- Bootstrap CSS
 		============================================ -->
-    <link rel="stylesheet" href="{{asset('/css/font-awesome.min.css') }}">
     <!-- meanmenu icon CSS
 		============================================ -->
     <link rel="stylesheet" href="{{asset('/css/meanmenu.min.css') }}">

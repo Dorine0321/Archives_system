@@ -25,7 +25,7 @@
                                         <li class="nav-item">
                                             <a href="#" data-toggle="dropdown" role="button" aria-expanded="false" class="nav-link dropdown-toggle">
                                                 <span class="fa fa-user"></span>
-                                                <span class="admin-name">Dorine Lore</span>
+                                                <span class="admin-name">{{ Auth::user()->name }}</span>
                                                 <span class="fa fa-caret-down"></span>
                                             </a>
                                             <ul role="menu" class="dropdown-header-top author-log dropdown-menu animated flipInX">
@@ -35,7 +35,13 @@
                                                 </li>
                                                 <li><a href="#"><span class="fa fa-cog"></span> Settings</a>
                                                 </li>
-                                                <li><a href="../index.php"><span class="fa fa-sign-out"></span> Log Out</a>
+                                                <li>
+                                                    <form method="POST" action="{{ route('auth.logout') }}">
+                                                        @csrf
+                                                        @method('DELETE')
+                                                        <i class="fa fa-sign-out"></i> <button style="border:none; background: inherit; color:white; margin-left: 1em" type="submit"><span class="fa fa-sign-out"></span> Log Out</button>
+                                                    </form>
+                                                    
                                                 </li>
                                             </ul>
                                         </li>

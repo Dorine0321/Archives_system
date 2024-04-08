@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\DepartmentController;
@@ -18,7 +19,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::prefix('admin')->name('admin.')->group(function(){
+Route::prefix('admin')->middleware('auth:sanctum')->name('admin.')->group(function(){
     Route::get('/', [DashboardController::class, 'index'])->name('home');
     Route::get('/upload-file', [DocumentController::class, 'create'])->name('upload-file');
     Route::get('/department', [DepartmentController::class, 'index'])->name('departments');
@@ -36,6 +37,6 @@ Route::prefix('admin')->name('admin.')->group(function(){
         return view('admin.layouts.pages.status-report');
     })->name('status-report');
 });
-Route::get('/', function () {
-    return view('auth.login');
-})->name('auth.login');
+Route::get('/', [AuthController::class, 'create'])->name('auth.login');
+Route::post('/', [AuthController::class, 'loginUser'])->name('auth.store');
+Route::delete('/', [AuthController::class, 'logout'])->name('auth.logout');

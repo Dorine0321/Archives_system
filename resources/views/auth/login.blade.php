@@ -18,7 +18,8 @@
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <!-- Bootstrap CSS
 		============================================ -->
-    <link rel="stylesheet" href="css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/fontawesome.min.css" />  
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.0-2/css/all.min.css" />  
     <!-- adminpro icon CSS
 		============================================ -->
     <link rel="stylesheet" href="css/adminpro-custon-icon.css">
@@ -55,7 +56,8 @@
     <div class="container-fluid">
         <div class="row">
             <div class="col-lg-4"></div>
-            <form id="adminpro-form" class="adminpro-form">
+            <form id="adminpro-form" class="adminpro-form" method="POST" action="{{ route('auth.store') }}">
+              @csrf
                 <div class="col-lg-4">
                     <div class="login-bg">
                         <div class="row">
@@ -69,12 +71,12 @@
                         <div class="row">
                             <div class="col-lg-4">
                                 <div class="login-input-head">
-                                    <p>Username</p>
+                                    <p>Email</p>
                                 </div>
                             </div>
                             <div class="col-lg-8">
                                 <div class="login-input-area">
-                                    <input type="text"/>
+                                    <input type="email" name="email"/>
                                     <i class="fa fa-user login-user" aria-hidden="true"></i>
                                 </div>
                             </div>
@@ -87,14 +89,14 @@
                             </div>
                             <div class="col-lg-8">
                                 <div class="login-input-area">
-                                    <input type="password"/>
+                                    <input type="password" name="password"/>
                                     <i class="fa fa-lock login-user"></i>
                                 </div>
                                 <div class="row">
                                     <div class="col-lg-12">
                                         <div class="login-keep-me">
                                             <label class="checkbox">
-                                                <input type="checkbox" name="remember" checked><i></i>Keep me logged in
+                                                <input type="checkbox" name="remember_token" checked><i></i>Keep me logged in
                                             </label>
                                         </div>
                                     </div>
@@ -104,7 +106,7 @@
                         <div class="row">
                             <div class="col-lg-12">
                                 <div class="login-button-pro">
-                                    <a href="{{ route('admin.home') }}" class="login-button login-button-rg" style="text-decoration:none">Login as Admin</a>
+                                    <button type="submit" class="login-button login-button-rg" style="text-decoration:none">Login as Admin</button>
                                     <a  href="department-user" class="login-button login-button-rd" style="text-decoration:none; margin-left: 5em">Department User</a>
                                 </div>
                             </div>
