@@ -16,11 +16,12 @@ return new class extends Migration
             $table->foreignId('category_id')->constrained()->onDelete('cascade');
             $table->string('title');
             $table->text('description');
-            $table->string('file_path');
+            $table->string('file_path')->nullable();
+            $table->string('image_path')->nullable();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->unsignedInteger('size');
-            $table->string('type');
-            $table->string('status');
+            $table->unsignedInteger('size')->nullable();
+            $table->string('type')->nullable();
+            $table->string('status')->default('PENDING');
             $table->foreignId('department_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });

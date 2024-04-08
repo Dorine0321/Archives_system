@@ -80,12 +80,13 @@
                                 <div class="row">
                                     <div class="col-lg-8 col-lg-offset-2">
                                         <div class="basic-login-inner"><br><br>
-                                            <form action="#">
+                                            <form action="{{ route('admin.files.store') }}" method="POST" enctype="multipart/form-data">
+                                                @csrf
                                                 <div class="row">
                                                     <div class="col-lg-6">
                                                         <div class="touchspin-inner">
                                                             <label>File Category</label>
-                                                            <select class="form-control" name="category">
+                                                            <select class="form-control" name="category_id">
                                                                 @foreach ($categories as $category)
                                                                     <option value="{{ $category->id }}">
                                                                         {{ $category->name }}
@@ -98,7 +99,7 @@
                                                     <div class="col-lg-6">
                                                         <div class="touchspin-inner">
                                                             <label>Department</label>
-                                                            <select class="form-control" name="department">
+                                                            <select class="form-control" name="department_id">
                                                                 @foreach ($departments as $department)
                                                                     <option value="{{ $department->id }}">
                                                                         {{ $department->name }}
@@ -134,8 +135,8 @@
                                                     <div class="col-lg-12">
                                                         <div class="touchspin-inner">
                                                             <div class="btn-group project-list-ad">
-                                                                <a href="#" class="btn btn-md btn-block"><i
-                                                                        class="fa fa-paper-plane"></i> Submit</a>
+                                                                <button type="submit" class="btn btn-md btn-block"><i
+                                                                        class="fa fa-paper-plane"></i> Submit</button>
                                                             </div>
                                                         </div>
                                                     </div>

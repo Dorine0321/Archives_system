@@ -83,25 +83,20 @@
                                             data-show-export="true" data-toolbar="#toolbar">
                                             <thead>
                                                 <tr>
-                                                    <th data-field="state" data-checkbox="true"></th>
                                                     <th>File Category</th>
-                                                    <th>Control No.</th>
-                                                    <th>File Name</th>
+                                                    <th>Title</th>
                                                     <th>Size</th>
                                                     <th>Type</th>
                                                     <th>Date Uploaded</th>
                                                     <th>Download</th>
                                                     <th>Department</th>
                                                     <th>Status</th>
-                                                    <th>Remarks</th>
                                                 </tr>
                                             </thead>
                                             <tbody>
                                                 @foreach ($documents as $document)
                                                 <tr>
-                                                    <td></td>
                                                     <td>{{ $document->category->name }}</td>
-                                                    <td></td>
                                                     <td>{{ $document->title }}</td>
                                                     <td>2{{ $document->size }}kb</td>
                                                     <td><img src="../img/docx.png" alt="" width="30"/></td>
@@ -113,7 +108,6 @@
                                                             <button class="btn btn-white btn-xs">pending</button>
                                                         </div>
                                                     </td>
-                                                    <td>Remarks</td>
                                                 </tr>
                                                 @endforeach
                                                 

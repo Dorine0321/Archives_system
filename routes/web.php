@@ -27,6 +27,7 @@ Route::prefix('admin')->name('admin.')->group(function(){
         return view('admin.layouts.pages.department-users');
     })->name('department-users');
     Route::get('/files', [DocumentController::class, 'index'])->name('files');
+    Route::post('/files', [DocumentController::class, 'store'])->name('files.store');
     Route::get('/settings', function () {
         return view('admin.layouts.pages.settings');
     })->name('settings');
